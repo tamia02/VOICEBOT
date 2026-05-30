@@ -494,7 +494,7 @@ async def entrypoint(ctx: JobContext):
             agent_stt = sarvam.STT(
                 language=stt_language,
                 model="saaras:v3",
-                mode="translate",
+                mode="transcribe",
                 flush_signal=True,
                 sample_rate=16000,
             )
@@ -502,7 +502,7 @@ async def entrypoint(ctx: JobContext):
         agent_stt = sarvam.STT(
             language=stt_language,      # "unknown" = auto-detect (#20)
             model="saaras:v3",
-            mode="translate",
+            mode="transcribe",
             flush_signal=True,
             sample_rate=16000,          # force 16kHz (#1)
         )
@@ -571,7 +571,7 @@ async def entrypoint(ctx: JobContext):
         stt=agent_stt,
         llm=agent_llm,
         tts=agent_tts,
-        turn_detection="stt",
+        turn_detection="vad",
         min_endpointing_delay=float(delay_setting),  # 0.05 default (#6)
         allow_interruptions=True,
     )
