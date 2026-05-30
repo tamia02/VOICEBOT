@@ -585,7 +585,7 @@ async def entrypoint(ctx: JobContext):
         greeting_played = True
         greeting = live_config.get(
             "first_line",
-            "Namaste! This is Aryan from Vaslix AI — we help businesses automate with AI. Hmm, may I ask what kind of business you run?"
+            "Namaste! This is Kavya from Vaslix AI — we help businesses automate with AI. Hmm, may I ask what kind of business you run?"
         )
         logger.info(f"[AGENT] Triggering greeting: '{greeting}'")
         try:

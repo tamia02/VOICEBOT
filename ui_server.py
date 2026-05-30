@@ -24,7 +24,7 @@ def read_config():
         return config.get(key) if config.get(key) else os.getenv(env_key, default)
 
     return {
-        "first_line": get_val("first_line", "FIRST_LINE", "Namaste! This is Aryan from Vaslix AI — we help businesses automate with AI. Hmm, may I ask what kind of business you run?"),
+        "first_line": get_val("first_line", "FIRST_LINE", "Namaste! This is Kavya from Vaslix AI — we help businesses automate with AI. Hmm, may I ask what kind of business you run?"),
         "agent_instructions": get_val("agent_instructions", "AGENT_INSTRUCTIONS", ""),
         "stt_min_endpointing_delay": float(get_val("stt_min_endpointing_delay", "STT_MIN_ENDPOINTING_DELAY", 0.6)),
         "llm_model": get_val("llm_model", "LLM_MODEL", "gpt-4o-mini"),
@@ -195,7 +195,7 @@ DEMO_PAGE_HTML = """<!DOCTYPE html>
 <body>
   <div class="card">
     <div class="avatar">🎙</div>
-    <h1>Talk to Aryan</h1>
+    <h1>Talk to Kavya</h1>
     <div class="sub">AI-powered multilingual consultant · Vaslix AI</div>
     <button class="btn btn-start" id="startBtn" onclick="startCall()">📞 Start Demo Call</button>
     <button class="btn btn-end" id="endBtn" onclick="endCall()">📵 End Call</button>
@@ -697,7 +697,7 @@ async def get_dashboard():
       <div class="section-title">Opening Greeting</div>
       <div class="form-group">
         <label>First Line (What the agent says when a call connects)</label>
-        <input type="text" id="first_line" value="{config.get('first_line', '')}" placeholder="Namaste! This is Aryan from Vaslix AI...">
+        <input type="text" id="first_line" value="{config.get('first_line', '')}" placeholder="Namaste! This is Kavya from Vaslix AI...">
         <div class="hint">This is the very first thing the agent says. Keep it concise and warm.</div>
       </div>
     </div>
